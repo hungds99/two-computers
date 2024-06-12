@@ -1,15 +1,12 @@
 import Link from 'next/link';
 import { ClientComponentA, ClientComponentB } from './components/client';
 import { ServerComponentA, ServerComponentB } from './components/server';
+import { fetchUser } from './lib/data';
 
 export default async function Page() {
   console.log('HomePageComponent');
 
-  const randomID = Math.floor(Math.random() * 10);
-  const response = await fetch(`https://jsonplaceholder.typicode.com/users/${randomID}`, {
-    cache: 'no-cache',
-  });
-  const user = await response.json();
+  const user = await fetchUser();
 
   return (
     <main className='flex min-h-screen flex-col items-center p-5 gap-10'>
