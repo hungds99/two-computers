@@ -18,12 +18,6 @@ export default async function Page() {
           <ServerComponentB />
         </ClientComponentA>
         <ClientComponentB />
-        <Link href='/server-page' prefetch={false} className='text-blue-500 hover:text-blue-700'>
-          Go to Server Page
-        </Link>
-        <Link href='/client-page' prefetch={false} className='text-blue-500 hover:text-blue-700'>
-          Go to Client Page
-        </Link>
       </div>
     </main>
   );
